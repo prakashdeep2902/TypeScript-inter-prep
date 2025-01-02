@@ -19,30 +19,48 @@ Differences between JavaScript and TypeScript:
    let message = "Hello, world!"; // Initially a string
    message = 123; // Now it's a number (no error in JS)
 
-console.log(message.toLowerCase());
-// This will throw a runtime error because 123 is not a string.
+   console.log(message.toLowerCase());
+   // This will throw a runtime error because 123 is not a string.
 
 <!-- In JavaScript, variables can change types dynamically, which might lead to errors that are only caught during runtime. -->
 
 TypeScript Example (Static Typing)
 let message: string = "Hello, world!"; // Explicitly declare as string
 message = 123; // TypeScript Error: Type '123' is not assignable to type 'string'.
-
 console.log(message.toLowerCase());
 // This code is safe because TypeScript ensures 'message' is always a string.
 
 <!-- Here, TypeScript catches the error at compile-time, ensuring type safety and preventing the runtime crash. -->
 
-2. What are the benefits of using TypeScript?
+Q2) What are the benefits of using TypeScript?
 
-1) Static Typing:
+1. Static Typing:
    TypeScript enforces type definitions, making it easier to catch errors during development rather than at runtime.
 
-2) Improved Code Readability and Maintainability:
+2. Improved Code Readability and Maintainability:
    Explicit types make the code self-documenting, helping developers understand the codebase quickly.
 
-3) Early Error Detection:
+3. Early Error Detection:
    TypeScript catches type-related errors at compile-time, reducing the chances of runtime issues.
 
-4) Scalability:
+4. Scalability:
    TypeScript's robust typing system makes it easier to maintain and scale large codebases.
+
+Q3) What are TypeScript types? Can you name some common types?
+TypeScript types are annotations used to specify the type of variables, functions, or objects. This helps ensure that the data being used is of the expected type, making the code safer and more predictable.
+
+Some of the most common types in TypeScript include:
+
+string – For text values.
+
+number – For numeric values.
+
+boolean – For true/false values.
+
+unknown – For variables whose type is not known yet.
+
+void – For functions that do not return a value.
+
+null and undefined – Represent null or undefined values.
+
+example is given in exampleOfInvQuestion.ts

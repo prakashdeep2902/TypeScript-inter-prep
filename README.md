@@ -98,3 +98,135 @@ let a: unknown = "prakash";
 if (typeof a === "string") {
 console.log(a.toUpperCase()); // Output: PRAKASH
 }
+
+5. What are interfaces in TypeScript? How are they different from type aliases?
+
+An interface in TypeScript acts as a contract that defines the structure of an object, ensuring that the object adheres to a specific set of properties and methods.
+
+Key features of interfaces:
+
+1. They describe the shape of objects, including their properties and methods.
+2. They can be extended to inherit properties and methods from other interfaces.
+3. They enforce consistency across different parts of your code.
+
+Example of an Interface:
+
+interface Person {
+name: string;
+age: number;
+greet(): void;
+}
+
+const person: Person = {
+name: "Alice",
+age: 30,
+greet() {
+console.log(`Hello, ${this.name}`);
+}
+};
+
+person.greet(); // Output: Hello, Alice
+
+How Are Interfaces Different From Type Aliases?
+
+Although interfaces and type aliases can often be used interchangeably to define object shapes, they have some important differences:
+
+1. Declaration Merging
+
+.Interfaces support declaration merging, allowing you to define the same interface multiple times, and TypeScript will merge them.
+
+interface Animal {
+name: string;
+}
+
+interface Animal {
+age: number;
+}
+
+const cat: Animal = {
+name: "Whiskers",
+age: 3
+};
+
+. Type Aliases do not support declaration merging. If you declare the same type alias twice, TypeScript will throw an error.
+
+type Animal = {
+name: string;
+};
+
+// Error: Duplicate identifier 'Animal'.
+type Animal = {
+age: number;
+};
+
+2. Extending vs. Intersection
+
+Interfaces use the extends keyword to inherit properties from other interfaces.
+Example:
+
+interface Animal {
+name: string;
+}
+
+interface Dog extends Animal {
+breed: string;
+}
+
+const dog: Dog = {
+name: "Buddy",
+breed: "Labrador"
+};
+
+. Type Aliases use the & (intersection) operator to combine types, but they cannot use extends.
+
+Example:
+type Animal = {
+name: string;
+};
+
+type Dog = Animal & {
+breed: string;
+};
+
+const dog: Dog = {
+name: "Buddy",
+breed: "Labrador"
+};
+
+3. Use Cases
+
+. Interfaces are primarily used to define object structures and are particularly useful in object-oriented programming (OOP) where classes can implement them.
+
+. Type Aliases are more flexible and can be used to define unions, intersections, and complex types (e.g., tuples, arrays, functions).
+
+4. Class Implementation
+
+. Interfaces can be implemented by classes, ensuring that the class adheres to a specific structure
+
+Example:
+
+interface Person {
+name: string;
+age: number;
+greet(): void;
+}
+
+class Student implements Person {
+name: string;
+age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+
+}
+
+const student = new Student("John", 20);
+student.greet(); // Output: Hello, my name is John
+
+.Type Aliases cannot be implemented by classes.

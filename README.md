@@ -32,3 +32,17 @@ console.log(message.toLowerCase());
 // This code is safe because TypeScript ensures 'message' is always a string.
 
 <!-- Here, TypeScript catches the error at compile-time, ensuring type safety and preventing the runtime crash. -->
+
+2. What are the benefits of using TypeScript?
+
+1) Static Typing:
+   TypeScript enforces type definitions, making it easier to catch errors during development rather than at runtime.
+
+2) Improved Code Readability and Maintainability:
+   Explicit types make the code self-documenting, helping developers understand the codebase quickly.
+
+3) Early Error Detection:
+   TypeScript catches type-related errors at compile-time, reducing the chances of runtime issues.
+
+4) Scalability:
+   TypeScript's robust typing system makes it easier to maintain and scale large codebases.

@@ -64,3 +64,37 @@ void – For functions that do not return a value.
 null and undefined – Represent null or undefined values.
 
 example is given in exampleOfInvQuestion.ts
+
+Q4) What is the difference between any and unknown?
+
+Difference Between any and unknown
+
+1.  any:
+
+. The any type allows you to assign any type of value to a variable, and TypeScript will not perform any type checking on that value.
+. You can perform any operations on a value of type any without TypeScript raising any errors, regardless of the actual type of the value.
+
+Example:
+let a: any = "prakash";
+console.log(a.toUpperCase()); // Output: PRAKASH
+
+. In this case, since a is of type any, TypeScript allows you to call .toUpperCase() without any issues, even though you could have assigned a non-string value to a.
+
+2. unknown:
+
+. The unknown type, on the other hand, is much safer than any. While you can assign any value to an unknown variable, TypeScript will not allow you to perform any operations on that value unless you narrow it down to a specific type.
+. You must first check or assert the type of an unknown value before performing operations like string methods, mathematical operations, etc
+
+Example:
+let a: unknown = "prakash";
+
+// This will cause an error because TypeScript doesn't know if `a` is a string
+console.log(a.toUpperCase()); // Error: Object is of type 'unknown'
+
+To perform operations on an unknown value, you must narrow the type, usually using a type guard like typeof or a type assertion
+
+let a: unknown = "prakash";
+
+if (typeof a === "string") {
+console.log(a.toUpperCase()); // Output: PRAKASH
+}

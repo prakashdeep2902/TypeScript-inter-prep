@@ -155,7 +155,9 @@ Exhaustive Checks: never is useful in exhaustive checks, particularly in switch 
 function getFirstElement(arr: number[]): number {
     return arr[0];
 }
-console.log(getFirstElement([1, 2, 3])); // Output: 1
+
+let arryoffun=[1, 2, 3]
+console.log(getFirstElement(arryoffun)); // Output: 1
 
 /*
 Represents a collection of items of the same type.

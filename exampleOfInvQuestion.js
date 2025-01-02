@@ -1,7 +1,6 @@
-"use strict";
 // string
 function greet(name) {
-    return `Hello, ${name}!`;
+    return "Hello, ".concat(name, "!");
 }
 console.log(greet("Alice")); // Output: Hello, Alice!
 /* discription:Represents textual data. Used to store words or text.
@@ -28,7 +27,7 @@ Example: function isEven(num: number): boolean checks whether a number is even a
  */
 // any
 function logValue(value) {
-    console.log(`Value: ${value}`);
+    console.log("Value: ".concat(value));
 }
 logValue("Hello, World!"); // Output: Value: Hello, World!
 logValue(123); // Output: Value: 123
@@ -46,10 +45,10 @@ Caution: Using any can lead to runtime errors because it disables TypeScript’s
 // unknown
 // The major difference between any and unknown is that TypeScript forces you to narrow or assert the type of unknown before performing any operations.
 //For example, with any, you can directly call methods or access properties:
-let value1 = "hello";
+var value1 = "hello";
 console.log(value1.toUpperCase()); // Output: "HELLO"
 // However, with unknown, you cannot do this directly:
-let value2 = "hello";
+var value2 = "hello";
 // Error: Object is of type 'unknown'
 console.log(value1.toUpperCase());
 /*
@@ -57,10 +56,10 @@ Represents a value of unknown type. Safer than any because it requires a type ch
 Example: function processValue(value: unknown): void ensures that operations are only performed after type checks.
 */
 //void
-// function logMessage(message: string): void {
-//     console.log(message);
-// }
-// logMessage("This is a message."); // Output: This is a message.
+function logMessage(message) {
+    console.log(message);
+}
+logMessage("This is a message."); // Output: This is a message.
 /*
 Represents the absence of a return value. Commonly used for functions that don't return anything.
 Example: function logMessage(message: string): void only logs the message and doesn't return anything.
@@ -68,7 +67,7 @@ Example: function logMessage(message: string): void only logs the message and do
 // null
 function printIfNotNull(value) {
     if (value !== null) {
-        console.log(`Value: ${value}`);
+        console.log("Value: ".concat(value));
     }
     else {
         console.log("Value is null.");
@@ -83,7 +82,7 @@ Example: function printIfNotNull(value: string | null): void handles both null a
 // undefined
 function printIfDefined(value) {
     if (value !== undefined) {
-        console.log(`Value: ${value}`);
+        console.log("Value: ".concat(value));
     }
     else {
         console.log("Value is undefined.");
@@ -99,7 +98,7 @@ Example: function printIfDefined(value: string | undefined): void checks if the 
 function throwError(message) {
     throw new Error(message);
 }
-let result = throwError("Something went wrong!"); // TypeScript knows this will never return a value.
+var result = throwError("Something went wrong!"); // TypeScript knows this will never return a value.
 /*
 The never type represents a value that never occurs. It is used to indicate that a function or expression will never return a value or terminate normally. This makes it quite useful for functions that always throw an error, or for cases where you have infinite loops.
 
@@ -125,12 +124,12 @@ Example: function getFirstElement(arr: number[]): number returns the first eleme
 function getNameAndAge() {
     return ["Alice", 25];
 }
-const [a, age] = getNameAndAge();
+var _a = getNameAndAge(), a = _a[0], age = _a[1];
 console.log(a, age); // Output: Alice 25
 // You can have optional elements in a tuple using the ? operator, meaning that not every element needs to be present.
-let person = ["Alice", 30];
+var person = ["Alice", 30];
 console.log(person); // Output: ["Alice", 30]
-let personWithStatus = ["Bob", 25, true];
+var personWithStatus = ["Bob", 25, true];
 console.log(personWithStatus); // Output: ["Bob", 25, true]
 /*
 
@@ -170,7 +169,7 @@ Type Safety: TypeScript ensures that only valid enum values are used, providing 
 */
 // object
 function printUser(user) {
-    console.log(`Name: ${user.name}, Age: ${user.age}`);
+    console.log("Name: ".concat(user.name, ", Age: ").concat(user.age));
 }
 printUser({ name: "Bob", age: 30 }); // Output: Name: Bob, Age: 30
 /*
@@ -179,15 +178,15 @@ Example: function printUser(user: { name: string; age: number }): void ensures t
 */
 // union
 function formatId(id) {
-    return `ID: ${id}`;
+    return "ID: ".concat(id);
 }
 console.log(formatId(123)); // Output: ID: 123
 console.log(formatId("abc123")); // Output: ID: abc123
 function printEmployeeDetails(employee) {
-    console.log(`Name: ${employee.name}, Age: ${employee.age}`);
-    console.log(`Employee ID: ${employee.employeeId}, Department: ${employee.department}`);
+    console.log("Name: ".concat(employee.name, ", Age: ").concat(employee.age));
+    console.log("Employee ID: ".concat(employee.employeeId, ", Department: ").concat(employee.department));
 }
-const employee = {
+var employee = {
     name: "John",
     age: 30,
     employeeId: 101,

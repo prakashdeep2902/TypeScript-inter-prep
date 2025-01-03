@@ -115,7 +115,8 @@ Exhaustive Checks: never is useful in exhaustive checks, particularly in switch 
 function getFirstElement(arr) {
     return arr[0];
 }
-console.log(getFirstElement([1, 2, 3])); // Output: 1
+var arryoffun = [1, 2, 3];
+console.log(getFirstElement(arryoffun)); // Output: 1
 /*
 Represents a collection of items of the same type.
 Example: function getFirstElement(arr: number[]): number returns the first element of a number array.

@@ -165,3 +165,30 @@ let sum = a + b;
 Which AST node would represent a + b?
 
 Answer: BinaryExpression
+
+# 5) Binder & Symbol Tables
+
+## Binder Responsibilities
+
+- Creates Symbols
+- Builds Symbol Tables
+- Tracks Scopes
+- Connects References to Declarations
+
+## Symbol Examples
+
+- Variables
+- Functions
+- Classes
+- Interfaces
+- Enums
+
+## Symbol Table Example
+
+age -> Variable
+getUser -> Function
+User -> Interface
+
+## Interview One-Liner
+
+The Binder creates symbols and symbol tables from the AST and manages scope information for the Type Checker.

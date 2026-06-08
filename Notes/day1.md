@@ -99,3 +99,69 @@ node app.js
 ## Key Point
 
 TypeScript -> Compile -> JavaScript -> Execute
+
+# 4) TypeScript Compiler Flow
+
+TypeScript
+↓
+Parser
+↓
+AST
+↓
+Binder
+↓
+Type Checker
+↓
+Emitter
+↓
+JavaScript
+
+## Important
+
+- Parser -> Creates AST
+- Binder -> Connects declarations
+- Type Checker -> Validates types
+- Emitter -> Generates JS
+
+## Interview Answer
+
+TypeScript converts code into an AST, performs binding and type checking, then emits JavaScript.
+
+#5) Parser & AST
+
+## Parser
+
+Converts source code into AST.
+
+## AST
+
+Tree representation of code.
+
+Example:
+
+let age = 25;
+
+VariableDeclaration
+├── age
+└── 25
+
+## Used By
+
+- TypeScript
+- Babel
+- ESLint
+- Prettier
+
+## Interview One-Liner
+
+AST is the internal tree structure that represents source code for analysis and transformation.
+
+Quick Interview Challenge
+
+For:
+
+let sum = a + b;
+
+Which AST node would represent a + b?
+
+Answer: BinaryExpression

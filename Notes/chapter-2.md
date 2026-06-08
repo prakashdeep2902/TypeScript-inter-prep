@@ -141,3 +141,20 @@ Avoid any whenever possible.
 ## Preferred
 
 Use unknown instead.
+
+# Type Narrowing
+
+function print(value: string | number) {
+if (typeof value === "string") {
+value.toUpperCase();
+}
+}
+
+## Type Guards
+
+- typeof
+- instanceof
+
+## Purpose
+
+Convert broad types into specific types safely.

@@ -97,3 +97,29 @@ TypeScript has 3 basic primitive types:
 - string
 - number
 - boolean
+
+# 3) Union Types
+
+## Syntax
+
+let value: string | number;
+
+## Meaning
+
+Variable can hold multiple specified types.
+
+## Example
+
+let id: string | number;
+
+id = 1;
+id = "EMP001";
+
+## Benefits
+
+- Flexible
+- Type Safe
+
+## Interview
+
+Union types allow a value to belong to one of several predefined types.

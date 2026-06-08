@@ -20,7 +20,7 @@ TypeScript catches errors during development before code reaches production.
 
 TypeScript is a statically typed superset of JavaScript that compiles to JavaScript and helps build scalable applications.
 
-# JavaScript vs TypeScript
+# 2) JavaScript vs TypeScript
 
 ## Browser Understands
 
@@ -66,7 +66,7 @@ After compilation:
 
 TypeScript is a compile-time tool that adds static typing to JavaScript and generates plain JavaScript for execution.
 
-# TypeScript Roadmap
+# 3) TypeScript Roadmap
 
 1. Fundamentals
 2. Types

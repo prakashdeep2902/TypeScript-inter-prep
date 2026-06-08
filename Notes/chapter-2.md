@@ -123,3 +123,21 @@ id = "EMP001";
 ## Interview
 
 Union types allow a value to belong to one of several predefined types.
+
+# any
+
+let value: any;
+
+## Problem
+
+- No type checking
+- No safety
+- Can cause runtime errors
+
+## Rule
+
+Avoid any whenever possible.
+
+## Preferred
+
+Use unknown instead.
